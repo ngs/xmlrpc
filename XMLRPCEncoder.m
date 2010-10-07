@@ -157,9 +157,8 @@
 #pragma mark -
 
 - (NSString *)encodeObject: (id)object {
-    if (!object) {
+    if (!object||[object isKindOfClass:[NSNull class]])
         return nil;
-    }
     
     if ([object isKindOfClass: [NSArray class]]) {
         return [self encodeArray: object];
@@ -210,7 +209,8 @@
     while (key = [enumerator nextObject]) {
         [buffer appendString: @"<member>"];
         [buffer appendFormat: @"<name>%@</name>", [self encodeString: key omitTag: YES]];
-        [buffer appendString: [self encodeObject: [dictionary objectForKey: key]]];
+				NSString *vtag = [self encodeObject: [dictionary objectForKey: key]];
+        if(vtag) [buffer appendString: vtag];
         [buffer appendString: @"</member>"];
     }
     
@@ -234,7 +234,9 @@
     
     if ([numberType isEqualToString: @"d"]) {
         return [self valueTag: @"double" value: [number stringValue]];
-    } else {
+    } else if ([numberType isEqualToString: @"c"]) {
+			return [self valueTag: @"boolean" value: [number stringValue]];
+		} else {
         return [self valueTag: @"i4" value: [number stringValue]];
     }
 }
