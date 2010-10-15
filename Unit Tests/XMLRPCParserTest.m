@@ -65,7 +65,8 @@
         id testCaseResult = [myTestCases objectForKey: testCaseName];
         id parsedResult = [parser parse];
         
-        STAssertTrue([self parsedResult: parsedResult isEqualToTestCaseResult: testCaseResult], @"The test case failed: %@", testCaseName);
+        //STAssertTrue([self parsedResult: parsedResult isEqualToTestCaseResult: testCaseResult], @"The test case failed: %@", testCaseName);
+        STAssertEqualObjects(parsedResult,testCaseResult,@"The test case failed: %@", testCaseName);
     }
 }
 

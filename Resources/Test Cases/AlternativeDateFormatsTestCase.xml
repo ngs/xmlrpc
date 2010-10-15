@@ -5,8 +5,8 @@
       <value>
         <array>
           <data>
-            <value><dateTime.iso8601>20091201T20:49:00</dateTime.iso8601></value>
-            <value><dateTime.iso8601>2009-12-01T20:50:00</dateTime.iso8601></value>
+            <value><dateTime.iso8601>20091201T20:49:00-07:00Z</dateTime.iso8601></value>
+            <value><dateTime.iso8601>2009-12-01T20:50:00-07:00Z</dateTime.iso8601></value>
           </data>
         </array>
       </value>

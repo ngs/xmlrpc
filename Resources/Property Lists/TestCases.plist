@@ -4,8 +4,8 @@
 <dict>
 	<key>AlternativeDateFormatsTestCase</key>
 	<array>
-		<date>2009-12-02T01:49:00Z</date>
-		<date>2009-12-02T01:50:00Z</date>
+		<date>2009-12-02T01:49:00-07:00Z</date>
+		<date>2009-12-02T01:50:00-07:00Z</date>
 	</array>
 	<key>EmptyBooleanTestCase</key>
 	<integer>0</integer>
